@@ -1,26 +1,33 @@
+import Thumbnails from './thumbnails.js'
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux'
+import ThumbImage from './thumbImage.js';
+import  { useEffect } from 'react'
+import {initializeJSON} from './actionCreators'
 
-function App() {
+
+
+const mapStateToProps = (state) => ({
+   page: state.pageReducer  
+});
+
+const App = (props) => {
+  
+  //use-effetc hoitaa reducerin alustuksen asynkronisella datalla
+  useEffect(() => {
+    props.initializeJSON()
+  }, [])
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {props.page === 0
+        ? <Thumbnails/>         
+        : <ThumbImage page = {props.page}/>
+      }
     </div>
-  );
+  )
 }
 
-export default App;
+export default connect(mapStateToProps, {initializeJSON})(App);
+
