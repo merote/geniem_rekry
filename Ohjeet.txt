@@ -1,12 +1,5 @@
-﻿Asennus:
-- npx create-react-app app_name
-(- npm install redux --save)
-- npm install --save react-redux
-- npm install --save redux-thunk
-- npm i --save redux-logger
-- npm install @material-ui/core
-
-- Ohjelma fetchaa siis API:n kautta kuvakkeet (thumbsit) ja näyttää ne yksi albumi kerralla näytöllä
+﻿- Toteutettu Redux/Hooks menetelmällä
+- Ohjelma fetchaa siis API rajapinnan kautta kuvakkeet (thumbsit) ja näyttää ne yksi albumi kerralla näytöllä
 - Hakukenttään voi syöttää kuinka montaa albumia haluaa selailla ja albumi napit ilmestyvät
 - Yhtä kuvaketta kun painaa avautuu isompi erillinen näkymä itse kuvasta.
 - Kuva näkymässä voi poistaa koko kuvan tai palata kuvake näkymään 
